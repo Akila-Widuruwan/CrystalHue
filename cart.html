@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Cart | CrystalHue</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <!-- PayPal SDK -->
+    <script src="https://www.paypal.com/sdk/js?client-id=AYoq-VXfl5mydrSgCmVhx9H_3rtsocNMT25duGgv5K-2OhqE1OcPPX4-cuzc0qnB30OuKdozOfpJXyOz&currency=USD"></script>
+    <style>
+        /* Additional inline styles for PayPal centering */
+        .paypal-loading-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 200px;
+            width: 100%;
+            margin: 2rem 0;
+        }
+        #paypal-button-container {
+            width: 100%;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        .checkout-flow {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="index.html" class="navbar-logo">
+                <i class="fas fa-gem"></i>
+                CrystalHue
+            </a>
+            
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-links">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-links">Products</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-links">Support</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-links">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a href="cart.html" class="nav-links"><i class="fas fa-shopping-cart"></i> <span class="cart-count">0</span></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Cart Content -->
+    <main class="cart-container">
+        <h1>Your Shopping Cart</h1>
+        
+        <div class="cart-items">
+            <!-- Cart items will be loaded dynamically via JavaScript -->
+            <div class="empty-cart-message" style="display: none;">
+                <p>Your cart is empty</p>
+                <a href="index.html" class="continue-shopping">Continue Shopping</a>
+            </div>
+        </div>
+        
+        <div class="cart-summary">
+            <div class="summary-row">
+                <span>Subtotal</span>
+                <span class="subtotal">$0.00</span>
+            </div>
+            <div class="summary-row">
+                <span>Shipping</span>
+                <span>FREE</span>
+            </div>
+            <div class="summary-row total">
+                <span>Total</span>
+                <span class="total-price">$0.00</span>
+            </div>
+            <div class="checkout-flow">
+                <button class="checkout-btn">Proceed to Checkout</button>
+                <div class="paypal-loading-container">
+                    <div id="paypal-button-container" style="display: none;"></div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="cart.js"></script>
+</body>
+</html>
